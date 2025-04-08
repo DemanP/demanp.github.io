@@ -62,9 +62,9 @@ canvas.addEventListener('mousedown', function(e) {
     const y = e.clientY - rect.top;
 
     let page_change;
-    if (x < canvas_width*0.25) {
+    if (x < canvas.scrollWidth*0.25) {
         page_change = 2;
-    } else if (x > canvas_width*0.75) {
+    } else if (x > canvas.scrollWidth*0.75) {
         page_change = -2;
     } else {return;}
     update_pages(page_change);
