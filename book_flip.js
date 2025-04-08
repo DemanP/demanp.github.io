@@ -4,9 +4,9 @@ const ctx = canvas.getContext("2d");
 
 const rect = canvas.getBoundingClientRect();
 
-var canvas_width = window.innerWidth*0.8;
+// var canvas_width = window.innerWidth*0.8;
+var canvas_width = window.screen.width;
 var canvas_height = canvas_width*0.69232856884385742717568301067487;
-
 
 canvas.width = canvas_width;
 canvas.height = canvas_height;
@@ -36,7 +36,14 @@ function update_pages(page_change=0) {
         draw_page(page_right, true);
     }
     draw_page(page_left);
+    
+    update_UI();
+
     console.log(current_page_count);
+}
+function update_UI() {
+    let page_number_element = document.getElementById("page_number");
+    page_number_element.innerHTML = String(current_page_count)+"-"+String(current_page_count+1);
 }
 function draw_page(page_path, right=false) {
     if(page_path=="") {return;}

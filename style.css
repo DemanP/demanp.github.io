@@ -15,10 +15,30 @@
   background-color: #1e00ff;
 }
 
-.book_flip {
+
+.small_break {
+  scale: 2vh;
+}
+
+
+#page_number {
+  display: block;
+  position: relative;
+  width: 100%;
+  /* padding-inline: 50vw; */
+  top: 2vh;
+  
+  text-align: center;
+  font-size: 3vh;
+  font-weight: bold;
+}
+
+#book_flip {
   width: auto;
   height: auto;
 }
+
+
 
 html {
   height: 98vh;
