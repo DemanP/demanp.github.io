@@ -51,6 +51,7 @@ function draw_page(page_path, right=false) {
 
     let img = new Image();
     img.onload = function(){
+        ctx.imageSmoothingQuality = "high";
         ctx.drawImage(img, position_x, 0, canvas_width/2, canvas_height);
     };
     img.src = chapter_path+page_path;
