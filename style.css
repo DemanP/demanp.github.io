@@ -39,6 +39,17 @@
   image-rendering: optimizeQuality;
 }
 
+#img_reader {
+  /* max-width: 80%; */
+  margin-inline: 5%;
+  display:inline-flex;
+  image-rendering: optimizeQuality;
+}
+
+.page {
+  width: 50%;
+}
+
 
 
 html {
