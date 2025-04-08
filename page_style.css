@@ -1,0 +1,36 @@
+.topbar {
+  background-color: #382c96;
+  overflow: hidden;
+}
+.topbar a {
+  float: left;
+  color: #ff0000;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: bold;
+}
+.topbar a:hover {
+  background-color: #1e00ff;
+}
+
+.pager {
+  width: 100%;
+  height: 80%;
+}
+
+html {
+  height: 98vh;
+}
+
+body {
+  height: 100%;
+  color: white;
+  font-family: Verdana;
+  background-color: #190000;
+}
+
+a {
+  color: #ff5c5c;
+}
