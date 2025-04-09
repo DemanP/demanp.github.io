@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-    <title>Lethal Bodies</title>
+    <title>Lethal Bodies Chapters</title>
     
     <link rel="stylesheet" href="style.css">
     
@@ -19,16 +19,18 @@
   
   <body>
     <div id="topbar"></div>
+
+    <h1>Chapter List</h1>
+
+    <script>
+        let chapters_amount = 10;
+        for (i in [...Array(chapters_amount).keys()]) {
+            let cur_chapter = Number(i)+1;
+            document.body.innerHTML += `<a href="lb_read.html?chapter=${cur_chapter}">Chapter ${cur_chapter}</a><br>`;
+        }
+    </script>
     
-    <h1>Lethal Bodies</h1>
-  
-    <p>
-      Lethal Bodies - ongoing manga series about mutations, unusual sci-fi and a lot of PTSD.
-    </p>
-    
-    <a href = "https://medibang.com/mpc/titles/ue2407182029353030026023125/">One-shot manga "Heart Core"</a>
-    <br>
-    <a href="chapters.html">Chapter list</a>
+    <!-- <div id="book_flip"></div> -->
 
   </body>
 </html>

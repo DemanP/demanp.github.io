@@ -1,3 +1,7 @@
+function zero_lead(number, length=2) {
+    return number.toLocaleString('en-US', {minimumIntegerDigits: length, useGrouping: false});
+}
+
 function canvas_reader() {
     // constants
     const canvas = document.getElementById("chapter_viewer");
@@ -74,14 +78,23 @@ function canvas_reader() {
 }
 
 function img_reader() {
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const chapter = zero_lead(Number(urlParams.get('chapter')));
+    const chapter_pages = 30;
+
     const img_page_left = document.getElementById("page_left");
     const img_page_right = document.getElementById("page_right");
 
-    var chapter_path = "chapter01/";
-    var chapter_pages = 30;
-    var current_page_count = 0;
+    const chapter_path = `chapter${chapter}/`;
 
+
+    {
+        let chapter_label = document.getElementById("chapter_label");
+        chapter_label.innerHTML = "Chapter " + chapter;
+    }
     
+    var current_page_count = 0;
 
     function update_pages(page_change=0) {
         img_page_right.style.opacity = 0;
@@ -91,10 +104,10 @@ function img_reader() {
         current_page_count = Math.max(0, current_page_count);
         current_page_count = Math.min(chapter_pages, current_page_count);
         
-        let formated_right = current_page_count.toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping: false});
+        let formated_right = zero_lead(current_page_count);
         let page_right = formated_right+".png";
 
-        let formated_left = (current_page_count+1).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping: false});
+        let formated_left = zero_lead(current_page_count+1);
         let page_left = formated_left+".png";
 
         if (current_page_count != 0) {
@@ -111,7 +124,7 @@ function img_reader() {
     }
     function update_UI() {
         let page_number_element = document.getElementById("page_number");
-        page_number_element.innerHTML = String(current_page_count)+"-"+String(current_page_count+1);
+        page_number_element.innerHTML = String(current_page_count+1)+"-"+String(current_page_count);
     }
 
     function page_clicked(e, pg, side) {
@@ -142,6 +155,5 @@ function img_reader() {
 
     update_pages()
 }
-
 
 img_reader()

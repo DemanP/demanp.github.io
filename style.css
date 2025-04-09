@@ -16,21 +16,21 @@
 }
 
 
-.small_break {
-  scale: 2vh;
-}
-
-
-#page_number {
+#page_number, #chapter_label {
   display: block;
   position: relative;
   width: 100%;
   /* padding-inline: 50vw; */
-  top: 2vh;
   
   text-align: center;
   font-size: 3vh;
   font-weight: bold;
+}
+#page_number {
+  top: 1vh;
+}
+#chapter_label {
+  bottom: 1vh;
 }
 
 #book_flip {
@@ -52,12 +52,12 @@
 
 
 
-html {
+/* html {
   height: 98vh;
-}
+} */
 
 body {
-  height: 100%;
+  /* height: 100%; */
   color: white;
   font-family: Verdana;
   background-color: #190000;
@@ -65,4 +65,10 @@ body {
 
 a {
   color: #ff5c5c;
+}
+
+br {
+  content: "";
+  display: block;
+  margin-top: 10px;
 }
