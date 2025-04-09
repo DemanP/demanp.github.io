@@ -111,7 +111,7 @@ function img_reader() {
     }
     function update_UI() {
         let page_number_element = document.getElementById("page_number");
-        page_number_element.innerHTML = String(current_page_count)+"-"+String(current_page_count+1);
+        page_number_element.innerHTML = String(current_page_count+1)+"-"+String(current_page_count);
     }
 
     function page_clicked(e, pg, side) {
